@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { BreakfastCard, LunchCard, DinnerCard } from "./RecipeCard";
 import "./MealPlanner.css";
+import Filter from "./Filter";
 
 const API_ID = process.env.REACT_APP_EDAMAM_API_ID;
 const API_KEY = process.env.REACT_APP_EDAMAM_API_KEY;
@@ -44,6 +45,9 @@ class MealPlan extends Component {
     };
   }
 
+  onhandleRadioButton = (e) => {
+    this.setState({ diet: e.target.value });
+  };
   //Fetch API for the 3 types of meals
   componentDidMount() {
     axios
@@ -147,28 +151,30 @@ class MealPlan extends Component {
     return (
       <div>
         <h1>Meal Planner Happiness</h1>
-        <div className="mealtypes">
-          {" "}
-          <h2>Meals</h2>
-          <h2>Breakfast</h2>
-          <h2>Lunch</h2>
-          <h2>Dinner</h2>
-        </div>
-        <div className="plan_container">
-          <div className="days">
-            <h2>Monday</h2>
-            <h2>Monday</h2>
-            <h2>Tuesday</h2>
-            <h2>Wednesday</h2>
-            <h2> Thursday</h2>
-            <h2>Friday</h2>
-            <h2>Saturday</h2>
-            <h2>Sunday</h2>
+        <Filter handleChange={this.onhandleRadioButton} />
+        <div className="container">
+          <div className="mealtypes">
+            {" "}
+            <h2>Meals</h2>
+            <h2>Breakfast</h2>
+            <h2>Lunch</h2>
+            <h2>Dinner</h2>
           </div>
-          <div className="meals">
-            <div id="breakfast">{BreakfastCardList}</div>
-            <div id="lunch">{LunchCardList}</div>
-            <div id="dinner">{DinnerCardList}</div>
+          <div className="plan_container">
+            <div className="days">
+              <h2>Monday</h2>
+              <h2>Tuesday</h2>
+              <h2>Wednesday</h2>
+              <h2> Thursday</h2>
+              <h2>Friday</h2>
+              <h2>Saturday</h2>
+              <h2>Sunday</h2>
+            </div>
+            <div className="meals">
+              <div id="breakfast">{BreakfastCardList}</div>
+              <div id="lunch">{LunchCardList}</div>
+              <div id="dinner">{DinnerCardList}</div>
+            </div>
           </div>
         </div>
       </div>

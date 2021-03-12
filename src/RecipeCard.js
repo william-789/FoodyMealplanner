@@ -30,7 +30,7 @@ const LunchCard = ({ image, name, link, ingredients }) => {
 
 const DinnerCard = ({ image, name, link, ingredients }) => {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "12rem" }}>
       <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
