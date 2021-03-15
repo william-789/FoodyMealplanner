@@ -53,7 +53,7 @@ class MealPlan extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://api.edamam.com/search?app_id=${API_ID}&app_key=${API_KEY}&q=&diet=${this.state.diet}&mealType=breakfast&from=0&to=${this.state.numberMeals}`
+        `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?app_id=${API_ID}&app_key=${API_KEY}&q=&diet=${this.state.diet}&mealType=breakfast&from=0&to=${this.state.numberMeals}`
       )
       .then((res) => {
         console.log(res);
@@ -64,7 +64,7 @@ class MealPlan extends Component {
 
     axios
       .get(
-        `https://api.edamam.com/search?app_id=${API_ID}&app_key=${API_KEY}&q=&diet=${this.state.diet}&mealType=lunch&from=0&to=${this.state.numberMeals}&dishType=main`
+        `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?app_id=${API_ID}&app_key=${API_KEY}&q=&diet=${this.state.diet}&mealType=lunch&from=0&to=${this.state.numberMeals}&dishType=main`
       )
       .then((res) => {
         console.log(res);
@@ -75,7 +75,7 @@ class MealPlan extends Component {
 
     axios
       .get(
-        `https://api.edamam.com/search?app_id=${API_ID}&app_key=${API_KEY}&q=&diet=${this.state.diet}&mealType=dinner&from=0&to=${this.state.numberMeals}&dishType=main`
+        `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?app_id=${API_ID}&app_key=${API_KEY}&q=&diet=${this.state.diet}&mealType=dinner&from=0&to=${this.state.numberMeals}&dishType=main`
       )
       .then((res) => {
         console.log(res);
