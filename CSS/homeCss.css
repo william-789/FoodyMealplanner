@@ -1,0 +1,228 @@
+/*---- General ----*/
+*, *::before, *::after{
+    margin:0;
+    padding:0;
+}
+body {
+    color:#fff;
+}
+/*----- Navbar -----*/
+nav {
+    display:block;
+    width:100%;
+    
+}
+nav ul {
+    overflow: hidden; /*avoid side scrolling*/
+    background-color: #000;
+}
+ul.superNav li {
+    list-style:none;
+    float:right;
+}
+ul.superNav li.leftLi {
+    float:left;
+}
+ul.superNav li a {
+    text-decoration:none;
+    color:#fff;
+    display:block;
+    padding:10px;
+    margin: 10px;
+    border: 3px solid #8000ff;
+    border-radius:5px;
+}
+ul.superNav li.menuIcon {
+    display:none;
+}
+.container {
+    width:100%;
+    margin:auto; /*even space*/
+    padding:5% 0;
+    height:80vh;
+}
+.row {
+    width:100%;
+    display:flex;
+    flex-wrap:wrap; /*for flexbox*/
+    align-items:center;
+}
+.row::after{
+    display:table;
+    clear:both;
+    content: "";
+}
+/*size of collumns*/
+.col-6 {
+    width:50%;
+}
+/*------ to Top Button ------*/
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #2900f0;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+#myBtn:hover {
+    background-color: #f00029;
+}
+
+/*------ First Section ------*/
+
+#firstSec {
+    background:#8000ff; /*last fallback*/
+    background: -webkit-linear-gradient(to bottom left, #8000ff 50%, #99d9ea 95%);
+    background: -o-linear-gradient(to bottom left, #8000ff 50%, #99d9ea 95%);
+    background: -moz-linear-gradient(to bottom left, #8000ff 50%, #99d9ea 95%);
+    background:linear-gradient(to bottom left, #8000ff 50%, #99d9ea 95%); /*Standard*/
+}
+.leftCol {
+    margin-left:20%;
+}
+.absolute {
+    position:absolute;
+}
+h1 {
+    color:#fff;
+    font-size:50px;
+    margin:0;
+    position:relative;
+    top:35vh;
+    left:20vh;
+}
+a.seeMore {
+    text-decoration:none;
+    font-size:35px;
+    color:#fff;
+    position:relative;   
+    top:45vh;
+    left:35vh;
+    padding:10px;
+    border:3px solid #fff;
+    border-radius:25px;
+}
+/*----- Wave top -----*/
+
+#firstSec:before {
+    content: '';    
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:150px;
+    background:url(https://drive.google.com/file/d/1Eh_Km6xBs__odED_EPd08OYu4ci1jvqr/view?usp=drivesdk);
+    background-size: cover;
+}
+
+/*------ Sec Section ------*/
+#secSec {
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;    
+}
+
+.col-5 {
+    margin:auto;
+}
+.col-4{
+    border:4px solid #8000ff;
+    width:350px;
+    padding:15px;
+    border-radius:25px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    margin:5vh;
+}
+.item {
+    height:175px;
+    font-size:40px;
+    text-align:center;
+}
+.item.IconD{
+    background-color:#8000ff;
+    border-radius:25px 0 0 25px;
+}
+.item.NameD {
+    background-color:#99d9ea;
+    width:175px;
+    border-radius:0 25px 25px 0;
+    margin:auto;
+    text-align:center;
+}
+.item.NameD a {
+    text-decoration:none;
+    color:#fff;
+}
+img {
+    width:175px;
+    height:175px;
+    border-radius:25px 0 0 25px;
+}
+/*----- Wave Bottom ------*/
+
+
+/*------ Third Section ------*/
+
+#thirdSec {
+    background:#99d9ea;
+}
+.seeMore.third, .third {
+    color:#8000ff;
+    border-style:none;
+}
+
+/*----------- RESPONSIVE -----------*/
+/*------ Mobile ------*/
+
+@media screen and (max-width:680px) {
+    ul.superNav li:not(:nth-child(1)){
+        display:none;
+    }
+    ul.superNav li.menuIcon {
+    display:block;
+    float:right;
+    border-style:none;
+    }
+    /*onclick*/
+    ul.superNav.mobile {
+        position:relative ;
+    }
+    ul.superNav.mobile li {
+        display:inline ;
+        float:none;
+    }
+    ul.superNav.mobile li.menuIcon {
+        position:absolute;
+        top:0;
+        right:0;
+    }
+    ul.superNav.mobile li a {
+        display:block;
+        text-align:center;
+        width:100px;
+        margin:auto;
+        margin-top:10px;
+    }
+    ul.superNav.mobile li a:last-child{
+        margin-bottom:10px;
+    }
+    .col-6 {
+        width:100%;
+        margin:0;
+    }
+}
